@@ -1,0 +1,42 @@
+
+.panel-box {
+  position: relative;
+  @include center($laptop);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @include below($sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include below($phone) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-item {
+  padding: 10px;
+  box-sizing: border-box;
+  @include below($phone) {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.panel-item.compact {
+  grid-column: 1 span;
+}
+
+@include above($tablet) {
+  .panel-item.landscape {
+    grid-column: 2 span;
+  }
+
+  .panel-item.square {
+    grid-row: 2 span;
+    grid-column: 2 / 2 span;
+  }
+  .panel-item.full {
+    grid-column: 1 / -1;
+  }
+}

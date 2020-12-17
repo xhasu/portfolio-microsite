@@ -1,0 +1,128 @@
+
+.app {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: blueviolet;
+  background-image: url('../img/web-background.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+section {
+  @include center($desktop + 30);
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+main {
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.bubbles {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  @include center($desktop);
+  @include no-events();
+  z-index: 0;
+}
+
+.bubble {
+  display: block;
+  position: absolute;
+  @include size(120px);
+  @include no-events();
+  background-color: white;
+  background-color: rgba(white, .4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(white, .4);
+  animation: float 6s ease-in-out infinite;
+  opacity: .2;
+  border-radius: 9999px;
+  z-index: 0;
+
+  &-lg {
+    @include size(240px);
+    animation: float-extend 6s ease-in-out infinite;
+  }
+
+  &:nth-child(1) {
+    animation-delay: -150ms;
+  }
+  &:nth-child(2) {
+    animation-delay: -300ms;
+  }
+  &:nth-child(3) {
+    animation-delay: -350ms;
+  }
+  &:nth-child(4) {
+    animation-delay: -50ms;
+  }
+  &:nth-child(5) {
+    animation-delay: -80ms;
+  }
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-40px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes float-extend {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+article {
+  flex: none;
+  @include center($sm);
+  text-align: center;
+  color: black;
+  padding-top: 40px;
+
+  @include below($sm) {
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
