@@ -1,8 +1,7 @@
 {
-  "name": "scss-scaffold",
+  "name": "portfolio-micro-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Portfolio micro-site project on Digital Ocean's App Platform",
   "scripts": {
     "start": "gulp",
     "dev": "gulp",
@@ -10,8 +9,8 @@
     "prod": "gulp deploy",
     "production": "npm run deploy"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "xhasu",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
