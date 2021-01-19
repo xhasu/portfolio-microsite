@@ -7,7 +7,9 @@
   flex-direction: column;
   justify-content: center;
 
-  border: 1px solid rgba($theme-light, .3);
+  border: 1px solid rgba($theme-light, .5);
+  border-right: 1px solid rgba($theme-light, .2);
+  border-bottom: 1px solid rgba($theme-light, .2);
   border-radius: 16px;
   width: 100%;
   height: 100%;
@@ -15,8 +17,8 @@
   background-color: rgba($theme-light, .15);
   background-image: linear-gradient(90deg, rgba($theme-light, .4), rgba($theme-light, .15));
   background-clip: padding-box;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 8px 16px 0 rgba(black, .1);
+  backdrop-filter: blur(px);
+  box-shadow: 0 12px 24px 0 rgba(black, .1);
   transition: all 400ms ease;
   overflow: hidden;
   box-sizing: border-box;
@@ -41,7 +43,7 @@
     content: "";
     display: block;
     @include absolute($top: 0, $left: 0);
-    transform: translate(-50%, -50%);
+    transform: translate(-25%, -50%);
     @include size(60px);
     filter: blur(40px);
     background-color: $theme-light;
